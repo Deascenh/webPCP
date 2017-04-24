@@ -1,10 +1,10 @@
-<h2><strong>Contexte : <?= $currentContexte['libelle'] ?></strong></h2>
+<h2><strong><?= $currentActivite['reference'] ?> - <?= $currentActivite['libelle'] ?></strong></h2>
 
 <?php if(!empty($askMeos)) : ?>
     <?php foreach($askMeos as $askMeo) : ?>
         <div class = "ibox-content m-b-md">
-            <a class="text-primary" href="/portefeuille/detail/?id_act=<?= $askMeo['actId'] ?>&id_pro=<?= $askMeo['id_situation_pro'] ?>"><h2><?= $askMeo['actRef'] ?></strong>&nbsp;<small><?= $askMeo['actLib'] ?></small></h2>
-            <p><strong>Situation Pro: </strong><?= $askMeo['situaProRef'] ?></p></a>
+            <a class="text-primary" href="/portefeuille/detail/?id_act=<?= $askMeo['actId'] ?>&id_pro=<?= $askMeo['id_situation_pro'] ?>"><h2><?= $askMeo['situaProRef'] ?></h2>
+                <strong>Contexte: </strong><?= $askMeo['contexteLibelle'] ?></p></a>
         </div>
     <?php endforeach ?>
 <?php else : ?>

@@ -12,7 +12,7 @@
 	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
 	<![endif]-->	
 
-    <title>PCF | Moulin Thibault</title>
+    <title>PCP | Moulin Thibault</title>
 
     <link href="/includes/css/bootstrap.min.css" rel="stylesheet">
     <link href="/includes/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -29,34 +29,31 @@
                 <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
                     <i class="fa fa-reorder"></i>
                 </button>
-                <a href="#" class="navbar-brand">Portefeuille</a>
+                <a href="/portefeuille/home" class="navbar-brand">Portefeuille</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar">
                 <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a aria-expanded="false" role="button" href="layouts.html"> Retour aux catégories</a>
-                    </li>
                     <li class="dropdown">
                         <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Contextes <span class="caret"></span></a>
                         <ul role="menu" class="dropdown-menu">
-                        <?php foreach($contextes as $contexte) : ?>
-                            <li><a href="/portefeuille/contexte/?id=<?= $contexte['id'] ?>"><?= $contexte['libelle'] ?></a></li>
-                        <?php endforeach ?>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Situations professionnelles <span class="caret"></span></a>
-                        <ul role="menu" class="dropdown-menu">
-                        <?php foreach($situapros as $situapro) : ?>
-                            <li><a href="/portefeuille/contexte/?id=<?= $situapro['id'] ?>"><?= $situapro['libelle'] ?></a></li>
+                        <?php foreach($navContextes as $navContexte) : ?>
+                            <li><a href="/portefeuille/contexte/?id=<?= $navContexte['id'] ?>"><?= $navContexte['libelle'] ?></a></li>
                         <?php endforeach ?>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Situations Obligatoires <span class="caret"></span></a>
                         <ul role="menu" class="dropdown-menu">
-                        <?php foreach($situaoblis as $situaobli) : ?>
-                            <li><a href="/portefeuille/contexte/?id=<?= $situaobli['id'] ?>"><?= $situaobli['libelle'] ?></a></li>
+                        <?php foreach($navSituaoblis as $navSituaobli) : ?>
+                            <li><a href="/portefeuille/obligatoire/?id=<?= $navSituaobli['id'] ?>"><?= $navSituaobli['libelle'] ?></a></li>
+                        <?php endforeach ?>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Situations professionnelles <span class="caret"></span></a>
+                        <ul role="menu" class="dropdown-menu">
+                        <?php foreach($navSituapros as $navSituapro) : ?>
+                            <li><a href="/portefeuille/professionnelle/?id=<?= $navSituapro['id'] ?>"><?= $navSituapro['libelle'] ?></a></li>
                         <?php endforeach ?>
                         </ul>
                     </li>
@@ -65,3 +62,5 @@
         </nav>
         </div>
         <div class="wrapper wrapper-content">
+            <div class="row">
+                <div class="col-lg-9">

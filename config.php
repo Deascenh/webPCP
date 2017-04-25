@@ -5,7 +5,7 @@ define ('DB_NAME', 	'e6moulint');
 define ('DB_USER', 	'root');
 define ('DB_PASS', 	'');
 define ('ACTION', 'portefeuille');
-define ('METHOD', 'contexte');
+define ('METHOD', 'home');
 
 // PHP 5.6 constante type array :
 const LIST_EXCEPTION = array(   'skin-config.html',

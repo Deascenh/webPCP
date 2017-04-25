@@ -1,10 +1,21 @@
- 
- </div> <!-- Fermeture de wrapper wrapper-content animated fadeInRight -->
+	    </div> <!-- col-lg-9 -->
+		<div class="col-lg-3">
+            <div class="wrapper wrapper-content project-manager">
+				<ul class="list-unstyled small">
+				<?php foreach($listActivites as $listActivite) : ?>
+					<li><a href="/portefeuille/activite/?id=<?= $listActivite['id'] ?>"><strong><?= $listActivite['reference'] ?></strong> - <?= $listActivite['libelle'] ?></a></li>
+					<hr class="m-xxs m-b-xs">
+				<?php endforeach ?>
+				</ul>
+			</div>
+		</div>
+	</div>
+ </div> <!-- Fermeture de wrapper wrapper-content -->
  <div class="footer">
 	<div>
 		&nbsp;
 		<span class="pull-right">
-			<strong>Developped by</strong> Thibault Moulin <small>2016-2017</small>
+			<strong>Developed by</strong> Thibault Moulin <small>2016-2017</small>
 		</span>
 		
 	</div>

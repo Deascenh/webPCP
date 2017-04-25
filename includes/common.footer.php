@@ -15,7 +15,7 @@
 	<div>
 		&nbsp;
 		<span class="pull-right">
-			<strong>Developped by</strong> Thibault Moulin <small>2016-2017</small>
+			<strong>Developed by</strong> Thibault Moulin <small>2016-2017</small>
 		</span>
 		
 	</div>

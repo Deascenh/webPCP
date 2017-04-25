@@ -57,7 +57,7 @@ class PortefeuilleModel extends Model{
 						INNER JOIN situation_pro ON meo.id_situation_pro = situation_pro.id
 						INNER JOIN contexte ON situation_pro.id_contexte = contexte.id
 						INNER JOIN competence ON meo.id_competence = competence.id
-						INNER JOIN activite ON competence.id = activite.id
+						INNER JOIN activite ON competence.id_activite = activite.id
 						ORDER BY enregistrement DESC");
 		return $this->getAll();
 	}
@@ -68,7 +68,7 @@ class PortefeuilleModel extends Model{
 						INNER JOIN situation_pro ON meo.id_situation_pro = situation_pro.id
 						INNER JOIN contexte ON situation_pro.id_contexte = contexte.id
 						INNER JOIN competence ON meo.id_competence = competence.id
-						INNER JOIN activite ON competence.id = activite.id
+						INNER JOIN activite ON competence.id_activite = activite.id
 						WHERE contexte.id = ?");
 		return $this->getAll([$id]);
 	}
@@ -79,7 +79,7 @@ class PortefeuilleModel extends Model{
 						INNER JOIN situation_pro ON meo.id_situation_pro = situation_pro.id
 						INNER JOIN contexte ON situation_pro.id_contexte = contexte.id
 						INNER JOIN competence ON meo.id_competence = competence.id
-						INNER JOIN activite ON competence.id = activite.id
+						INNER JOIN activite ON competence.id_activite = activite.id
 						WHERE situation_pro.id = ?
 						GROUP BY activite.id");
 		return $this->getAll([$id]);
@@ -93,7 +93,7 @@ class PortefeuilleModel extends Model{
 						INNER JOIN meo ON realisation.id_situation_pro = meo.id
 						INNER JOIN contexte ON situation_pro.id_contexte = contexte.id
 						INNER JOIN competence ON meo.id_competence = competence.id
-						INNER JOIN activite ON competence.id = activite.id
+						INNER JOIN activite ON competence.id_activite = activite.id
 						WHERE realisation.id = ?");
 		return $this->getAll([$id]);
 	}
@@ -104,7 +104,7 @@ class PortefeuilleModel extends Model{
 						INNER JOIN situation_pro ON meo.id_situation_pro = situation_pro.id
 						INNER JOIN contexte ON situation_pro.id_contexte = contexte.id
 						INNER JOIN competence ON meo.id_competence = competence.id
-						INNER JOIN activite ON competence.id = activite.id
+						INNER JOIN activite ON competence.id_activite = activite.id
 						WHERE activite.id = ?");
 		return $this->getAll([$id]);
 	}
@@ -115,7 +115,7 @@ class PortefeuilleModel extends Model{
 						INNER JOIN situation_pro ON meo.id_situation_pro = situation_pro.id
 						INNER JOIN contexte ON situation_pro.id_contexte = contexte.id
 						INNER JOIN competence ON meo.id_competence = competence.id
-						INNER JOIN activite ON competence.id = activite.id
+						INNER JOIN activite ON competence.id_activite = activite.id
 						WHERE activite.id = :id_act
 						AND situation_pro.id = :id_pro");
 		return $this->getAll($data);

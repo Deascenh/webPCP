@@ -59,7 +59,20 @@ class PortefeuilleController extends Controller{
             $action = $this->formatAction($action);
             $detailMeos = $this->_model->findMeoByProAct($action['query']);
             foreach($detailMeos as $key => $value){
-                $detailMeos[$key]['mediaMeos'] =  $this->_model->findMediaByMeo($value['id']);
+                $medias = $this->_model->findMediaByMeo($value['id']);
+                if(!empty($medias)){
+                    foreach($medias as $k => $v){
+                        switch($v['type']){
+                        case('pdf'):
+                            $medias[$k]['tag'] = '<a class="btn btn-success btn-xl" target="_blank" href="/includes/uploads/' . $v['nom_fichier'] . '">Visionner le PDF</a>';
+                            break;
+                        case('png'):
+                            $medias[$k]['tag'] = '<img class="img-responsive" src="/includes/uploads/' . $v['nom_fichier'] . '">';
+                            break;
+                        }
+                    }
+                }
+                $detailMeos[$key]['mediaMeos'] = $medias;
             }
             $this->_view->set('detailMeos', $detailMeos);
         }
